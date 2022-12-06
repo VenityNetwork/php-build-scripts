@@ -26,6 +26,7 @@ EXT_RECURSIONGUARD_VERSION="0.1.0"
 EXT_LIBDEFLATE_VERSION="0.1.0"
 EXT_MORTON_VERSION="0.1.2"
 EXT_XXHASH_VERSION="0.1.1"
+EXT_ENCODING_VERSION="74dba90ebfe586851fabb861e3ce69be48e8d36b"
 
 function write_out {
 	echo "[$1] $2"
@@ -849,6 +850,8 @@ get_github_extension "morton" "$EXT_MORTON_VERSION" "pmmp" "ext-morton"
 
 get_github_extension "xxhash" "$EXT_XXHASH_VERSION" "pmmp" "ext-xxhash"
 
+get_github_extension "encoding" "$EXT_ENCODING_VERSION" "pmmp" "ext-encoding"
+
 echo -n "[PHP]"
 
 if [ "$DO_OPTIMIZE" != "no" ]; then
@@ -979,6 +982,7 @@ $HAVE_MYSQLI \
 --with-crypto \
 --enable-recursionguard \
 --enable-xxhash \
+--enable-encoding \
 $HAVE_VALGRIND \
 $CONFIGURE_FLAGS >> "$DIR/install.log" 2>&1
 echo -n " compiling..."
